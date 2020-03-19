@@ -1,10 +1,28 @@
-// Gets the appointments for a given day
 export function getAppointmentsForDay(state, day) {
-  const validDays = state.days.map(day => day.name);
-  // console.log('validDays', validDays);
-  if (!day || !validDays.includes(day)) return [];
+  let aptArr = [];
+  for (let date of state.days) {
+    if (date.name === day) {
+      aptArr.push(...date.appointments);
+    }
+  }
 
-  return state.days
-    .filter(appointment => appointment.name === day)[0]
-    .appointments.map(apptId => state.appointments[apptId]);
+  let appointmentsArr = [];
+  for (let aptObj in state.appointments) {
+    for (let id of aptArr) {
+      if (id === parseInt(aptObj)) {
+        appointmentsArr.push(state.appointments[aptObj])
+      }
+    }
+  }
+  
+  return appointmentsArr;
 }
+
+// Gets an interview
+export function getInterview(state, interview) {
+        let interviewObj = null;
+        if (interview) {
+          interviewObj = {...interview, interviewer: state.interviewers[interview.interviewer]};
+        }
+        return interviewObj;
+      }
