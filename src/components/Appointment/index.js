@@ -4,18 +4,13 @@ import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 
 export default function Appointment(props) {
-  console.log("Appointment time: " + props.time);
-  if(props.interview){
-    console.log("Student: " + props.interview.student);
-    console.log("Interviewer: " + props.interview.interviewer);
-  }
   return (
     <article className="appointment">
-      <Header time={props.time} />
-      {props.interview && (
+      <Header time={props.appointment.time} />
+      {props.appointment.interview && (
         <Show
-          student={props.interview.student}
-          interviewer={props.interview.interviewer}
+          student={props.appointment.interview.student}
+          interviewer={props.appointment.interview.interviewer}
         />
       )}
       {!props.interview && <Empty />}
