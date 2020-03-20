@@ -138,13 +138,6 @@ storiesOf("Button", module)
     />
   ));
 
-  // storiesOf("Appointment", module)
-  // .addParameters({
-  //   backgrounds: [{ name: "white", value: "#fff", default: true }]
-  // })
-  // .add("Appointment", () => <Appointment />)
-  // .add("Appointment with Time", () => <Appointment time="12pm" />);
-
   storiesOf("Appointment", module)
   .addParameters({
     backgrounds: [{ name: "white", value: "#fff", default: true }]
@@ -188,21 +181,3 @@ storiesOf("Button", module)
       onCancel={action('onCancel')}
     />
   ))
- 
-  // .add("Appointment Empty", () => (
-  //   <Fragment>
-  //     <Appointment id={1} time="12pm" />
-  //     <Appointment id="last" time="1pm" />
-  //   </Fragment>
-  // ))
-
-  // .add("Appointment Booked", () => (
-  //   <Fragment>
-  //     <Appointment
-  //       id={1}
-  //       time="12pm"
-  //       interview={{ student: "Lydia Miller-Jones", interviewer }}
-  //     />
-  //     <Appointment id="last" time="1pm" />
-  //   </Fragment>
-  // ));
