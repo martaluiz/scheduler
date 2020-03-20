@@ -18,8 +18,10 @@ export default function useVisualMode(initial) {
     if (history.length) {
       const prevMode = history[history.length - 1]
       setMode(prevMode)
+      
     }
   };
+
 
 
   return { mode, transition, back }
