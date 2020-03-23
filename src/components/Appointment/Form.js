@@ -9,14 +9,14 @@ export default function Form(props) {
   const [error, setError] = useState('');
 
   // Reset details; passed to cancel
-  const reset = function() {
+  const reset = function () {
     setName('');
     setError('');
     setInterviewer(null);
   };
 
   // Action performed upon clicking 'Cancel' button
-  const cancel = function() {
+  const cancel = function () {
     reset();
     props.onCancel();
   };
@@ -60,7 +60,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button onClick={() => props.onSave(name, interviewer)} confirm>Save</Button>
+          <Button onClick={() => validate()} confirm>Save</Button>
         </section>
       </section>
     </main>
