@@ -41,7 +41,7 @@ export default function Appointment(props) {
 
   function onDelete() {
     // SHOW -> CONFIRM (replace) -> DELETING (replace
-    console.log(onDelete);
+
     transition(DELETING, true);
 
     const deleting = props.cancelInterview(props.id);

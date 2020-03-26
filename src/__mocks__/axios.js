@@ -85,7 +85,6 @@ export default {
     }
 
     if (url === "http://localhost:8001/api/appointments") {
-      console.log("got fixtures");
       return Promise.resolve({
         status: 200,
         statusText: "OK",
